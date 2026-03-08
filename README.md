@@ -1,2 +1,105 @@
-# frontend
-멋쟁이사자처럼 수원대학교 14기 프론트엔드 파트 레포지토리입니다.
+<p align="center">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:7F7FD5,100:86A8E7&height=220&section=header&text=2026%20FE:SSION&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=35"/>
+</p>
+
+<div align="center">
+
+### 수원대학교 멋쟁이사자처럼 14기  
+### 🦁 Frontend Session Repository
+
+프론트엔드 세션 자료와 과제를 관리하는 공간입니다.
+
+<br>
+
+![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JS](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+
+</div>
+
+---
+
+# 👥 Team
+
+<div align="center">
+
+<table>
+<tr>
+
+<td align="center" width="200">
+
+<img src="https://github.com/mi-noong.png" width="120"/>
+
+### 김민영
+ 
+
+<a href="https://github.com/mi-noong">
+<img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/>
+</a>
+
+</td>
+
+<td align="center" width="200">
+
+<img src="https://github.com/username.png" width="120"/>
+
+### 팀원 이름
+
+
+<a href="https://github.com/username">
+<img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/>
+</a>
+
+</td>
+
+<td align="center" width="200">
+
+<img src="https://github.com/username.png" width="120"/>
+
+### 팀원 이름
+
+
+<a href="https://github.com/username">
+<img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/>
+</a>
+
+</td>
+
+</tr>
+</table>
+
+</div>
+
+---
+
+# 📚 Session
+
+| Week | Topic | Content |
+|-----|-----|-----|
+| 1 | 공통 세션 | Git, GitHub, Figma |
+| 2 | HTML&CSS | HTML 기본 구조, CSS 선택자 |
+| 3 | JavaScript 기초 | 변수, 데이터 타입, 조건문, 반복문, 함수 |
+| 4 | JavaScript 비동기&데이터 | DOM, 이벤트 처리, fetch API |
+| 5 | React | React 기본 개념, 컴포넌트 |
+| 6 | Hooks&Routing | useState, useEffect, React Router |
+| 7 | TypeScript | 인터페이스, React + TypeScript |
+| 8 | Project | 최종 서비스 완성 |
+
+---
+
+# 📝 Assignment
+
+| Week | Assignment |
+|-----|-----|
+| 1 | PBL 1&2 |
+| 2 | PBL 3주차, 로그인 페이지 만들기(Session) |
+| 3 |  |
+| 4 |  |
+
+---
+
+# 📌 GitHub Rules
+
+### Branch
