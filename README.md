@@ -1,7 +1,6 @@
 <p align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:7F7FD5,100:86A8E7&height=220&section=header&text=2026%20FE:SSION&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=35"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF7A00,100:FFB347&height=220&section=header&text=2026%20FE:SSION&fontSize=50&fontColor=ffffff&animation=fadeIn"/>
 </p>
-
 <div align="center">
 
 ### 수원대학교 멋쟁이사자처럼 14기  
@@ -103,3 +102,17 @@
 # 📌 GitHub Rules
 
 ### Branch
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<p align="center">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF7A00,100:FFFFFF&height=120&section=footer"/>
+</p>
