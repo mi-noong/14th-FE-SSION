@@ -139,7 +139,7 @@
 | 4 | JavaScript 비동기&데이터 | DOM, 이벤트 처리, fetch API |
 | 5 | React | React 기본 개념, 컴포넌트 |
 | 6 | Hooks&Routing | useState, useEffect, React Router |
-| 7 | TypeScript,Supabase | 인터페이스, React + TypeScript |
+| 7 | TypeScript, Supabase | 인터페이스, React + TypeScript |
 | 8 | Project | 최종 서비스 완성 |
 
 ---
@@ -162,10 +162,10 @@
 # 📌 GitHub Rules
 
 ### 폴더 구조&이름 규칙
-<img width="342" height="95" alt="image" src="https://github.com/user-attachments/assets/6894b0dc-8386-4d0e-86bd-c2b3182c26e7" /> <br>
+<img width="336" height="92" alt="image" src="https://github.com/user-attachments/assets/e74da8ad-4f3b-488b-ab3d-d3e078992bdc" />
+<br>
 📂 최상위 폴더 : "week{N}" <br>
 📂 하위 폴더 : "본인 이름" 
-<br>
 <br>
 <br>
 
@@ -175,9 +175,12 @@
     <img src="https://img.shields.io/badge/과제%20제출%20방법%20확인-000000?style=for-the-badge&logo=notion&logoColor=white"/>
   </a>
 </p>
-=======
+<br>
 
-
+### ⚠️ 주의 사항
+- 항상 본인 이름의 브랜치에서만 작업한다.
+- Merge 하지 않는다.
+- 과제 제출에 어려움이 있는 경우 운영진에게 바로 문의한다!!
 
 <br>
 <br>
