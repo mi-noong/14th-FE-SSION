@@ -139,7 +139,7 @@
 | 4 | JavaScript 비동기&데이터 | DOM, 이벤트 처리, fetch API |
 | 5 | React | React 기본 개념, 컴포넌트 |
 | 6 | Hooks&Routing | useState, useEffect, React Router |
-| 7 | TypeScript | 인터페이스, React + TypeScript |
+| 7 | TypeScript,Supabase | 인터페이스, React + TypeScript |
 | 8 | Project | 최종 서비스 완성 |
 
 ---
@@ -165,8 +165,17 @@
 <img width="342" height="95" alt="image" src="https://github.com/user-attachments/assets/6894b0dc-8386-4d0e-86bd-c2b3182c26e7" /> <br>
 📂 최상위 폴더 : "week{N}" <br>
 📂 하위 폴더 : "본인 이름" 
+<br>
+<br>
+<br>
 
 ### 과제 제출 방법
+<p>
+  <a href="https://www.notion.so/327ab5205e988048bdb0feb0e36215db">
+    <img src="https://img.shields.io/badge/과제%20제출%20방법%20확인-000000?style=for-the-badge&logo=notion&logoColor=white"/>
+  </a>
+</p>
+
 
 
 
