@@ -161,15 +161,15 @@
 
 # 📌 GitHub Rules
 
-### 폴더 구조&이름 규칙
+### 🗃️ 폴더 구조&이름 규칙
 <img width="336" height="92" alt="image" src="https://github.com/user-attachments/assets/e74da8ad-4f3b-488b-ab3d-d3e078992bdc" />
-<br>
+<br> 
 📂 최상위 폴더 : "week{N}" <br>
 📂 하위 폴더 : "본인 이름" 
 <br>
 <br>
 
-### 과제 제출 방법
+### :white_check_mark: 과제 제출 방법
 <p>
   <a href="https://www.notion.so/327ab5205e988048bdb0feb0e36215db" target="_blank">
     <img src="https://img.shields.io/badge/과제%20제출%20방법%20확인-000000?style=for-the-badge&logo=notion&logoColor=white"/>
