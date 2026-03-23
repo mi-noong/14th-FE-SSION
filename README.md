@@ -29,46 +29,46 @@
 <tr>
 
 <td align="center" width="180">
-<img src="https://github.com/username.png" width="100"/>
+<img src="https://github.com/eoniseung0430-droid.png" width="100"/>
 <br/>
 <b>김승언</b><br/>
-<a href="https://github.com/username">
+<a href="https://github.com/eoniseung0430-droid">
 <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/>
 </a>
 </td>
 
 <td align="center" width="180">
-<img src="https://github.com/username.png" width="100"/>
+<img src="https://github.com/KimHyungJin-Git.png" width="100"/>
 <br/>
 <b>김형진</b><br/>
-<a href="https://github.com/username">
+<a href="https://github.com/KimHyungJin-Git">
 <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/>
 </a>
 </td>
 
 <td align="center" width="180">
-<img src="https://github.com/username.png" width="100"/>
+<img src="https://github.com/mink-yung.png" width="100"/>
 <br/>
 <b>박민경</b><br/>
-<a href="https://github.com/username">
+<a href="https://github.com/mink-yung">
 <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/>
 </a>
 </td>
 
 <td align="center" width="180">
-<img src="https://github.com/username.png" width="100"/>
+<img src="https://github.com/0601sunny-spec.png" width="100"/>
 <br/>
 <b>박주원</b><br/>
-<a href="https://github.com/username">
+<a href="https://github.com/0601sunny-spec">
 <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/>
 </a>
 </td>
 
 <td align="center" width="180">
-<img src="https://github.com/username.png" width="100"/>
+<img src="https://github.com/baeeunbin507-ops.png" width="100"/>
 <br/>
 <b>배은빈</b><br/>
-<a href="https://github.com/username">
+<a href="https://github.com/baeeunbin507-ops">
 <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/>
 </a>
 </td>
@@ -78,46 +78,46 @@
 <tr>
 
 <td align="center" width="180">
-<img src="https://github.com/username.png" width="100"/>
+<img src="https://github.com/sjinho3-sketch.png" width="100"/>
 <br/>
 <b>신진호</b><br/>
-<a href="https://github.com/username">
+<a href="https://github.com/sjinho3-sketch">
 <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/>
 </a>
 </td>
 
 <td align="center" width="180">
-<img src="https://github.com/username.png" width="100"/>
+<img src="https://github.com/hyesun.png" width="100"/>
 <br/>
 <b>안혜선</b><br/>
-<a href="https://github.com/username">
+<a href="https://github.com/hyesun">
 <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/>
 </a>
 </td>
 
 <td align="center" width="180">
-<img src="https://github.com/username.png" width="100"/>
+<img src="https://github.com/anwjrdid.png" width="100"/>
 <br/>
 <b>양채현</b><br/>
-<a href="https://github.com/username">
+<a href="https://github.com/anwjrdid">
 <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/>
 </a>
 </td>
 
 <td align="center" width="180">
-<img src="https://github.com/username.png" width="100"/>
+<img src="https://github.com/yupo5710.png" width="100"/>
 <br/>
 <b>최율도</b><br/>
-<a href="https://github.com/username">
+<a href="https://github.com/yupo5710">
 <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/>
 </a>
 </td>
 
 <td align="center" width="180">
-<img src="https://github.com/username.png" width="100"/>
+<img src="https://github.com/eunseong7882.png" width="100"/>
 <br/>
 <b>허은성</b><br/>
-<a href="https://github.com/username">
+<a href="https://github.com/eunseong7882">
 <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/>
 </a>
 </td>
