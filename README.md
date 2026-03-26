@@ -133,13 +133,13 @@
 
 | Week | Topic | Content |
 |-----|-----|-----|
-| 1 | 공통 세션 | Git, GitHub, Figma |
+| 1 | 공통 세션 | Git, GitHub |
 | 2 | HTML&CSS | HTML 기본 구조, CSS 선택자 |
 | 3 | JavaScript 기초 | 변수, 데이터 타입, 조건문, 반복문, 함수 |
 | 4 | JavaScript 비동기&데이터 | DOM, 이벤트 처리, fetch API |
 | 5 | React | React 기본 개념, 컴포넌트 |
 | 6 | Hooks&Routing | useState, useEffect, React Router |
-| 7 | TypeScript,Supabase | 인터페이스, React + TypeScript |
+| 7 | TypeScript, Supabase | 인터페이스, React + TypeScript |
 | 8 | Project | 최종 서비스 완성 |
 
 ---
@@ -148,7 +148,7 @@
 
 | Week | Assignment |
 |-----|-----|
-| 1 | PBL 1&2주차 |
+| 1 | VS Code 설치 및 환경설정 |
 | 2 |  |
 | 3 |  |
 | 4 |  |
@@ -161,24 +161,28 @@
 
 # 📌 GitHub Rules
 
-### 폴더 구조&이름 규칙
-<img width="342" height="95" alt="image" src="https://github.com/user-attachments/assets/6894b0dc-8386-4d0e-86bd-c2b3182c26e7" /> <br>
+### 🗃️ 폴더 구조&이름 규칙
+<img width="336" height="92" alt="image" src="https://github.com/user-attachments/assets/e74da8ad-4f3b-488b-ab3d-d3e078992bdc" />
+<br> 
 📂 최상위 폴더 : "week{N}" <br>
 📂 하위 폴더 : "본인 이름" 
 <br>
 <br>
-<br>
 
-### 과제 제출 방법
+### :white_check_mark: 과제 제출 방법
 <p>
   <a href="https://www.notion.so/327ab5205e988048bdb0feb0e36215db" target="_blank">
     <img src="https://img.shields.io/badge/과제%20제출%20방법%20확인-000000?style=for-the-badge&logo=notion&logoColor=white"/>
   </a>
 </p>
-
-
-
 <br>
+
+### ⚠️ 주의 사항
+- 항상 본인 이름의 브랜치에서만 작업한다.
+- Merge 하지 않는다.
+- PR 메시지 형식 : [이름/PBL or Session] week{N} 과제 제출
+- 과제 제출에 어려움이 있는 경우 운영진에게 바로 문의한다!!
+
 <br>
 <br>
 <br>
