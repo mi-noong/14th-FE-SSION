@@ -169,6 +169,12 @@
 <br>
 <br>
 
+### 🔀 Branches
+**main branch** → 아기사자 과제 제출 branch <br>
+**session branch** → 정기세션 자료 공간 branch
+
+<br>
+
 ### :white_check_mark: 과제 제출 방법
 <p>
   <a href="https://www.notion.so/327ab5205e988048bdb0feb0e36215db" target="_blank">
