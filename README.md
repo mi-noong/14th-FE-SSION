@@ -90,7 +90,7 @@
 <img src="https://github.com/hyesun.png" width="100"/>
 <br/>
 <b>안혜선</b><br/>
-<a href="https://github.com/hyesun">
+<a href="https://github.com/nahuesyn">
 <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/>
 </a>
 </td>
