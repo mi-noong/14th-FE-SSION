@@ -1,0 +1,21 @@
+        body{
+            background-color: rgb(216, 215, 215);
+        }
+        .card{
+            width: 350px;
+            background: white;
+            border-radius: 10px;
+        }
+        .card img{
+            margin-left: 60px;
+            margin-top: 20px;
+        }
+        .card2{
+            background-color: white;
+            width: 800px;
+            height: 800px;
+            border-radius: 10px;
+        }
+        .role{
+            color: blue;
+        }
