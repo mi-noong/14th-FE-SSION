@@ -1,0 +1,240 @@
+/* ===========================
+   Variables
+=========================== */
+:root {
+  --bg: #f0f2f5;
+  --white: #ffffff;
+  --text-dark: #111111;
+  --text-gray: #555555;
+  --text-track: #888888;
+  --blue: #2d6be4;
+  --card-radius: 14px;
+  --card-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* ===========================
+   Reset
+=========================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===========================
+   Base
+=========================== */
+body {
+  font-family: var(--font);
+  background-color: var(--bg);
+  color: var(--text-dark);
+  line-height: 1.65;
+}
+
+/* ===========================
+   Page
+=========================== */
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 36px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.page-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* ===========================
+   요약 카드 그리드
+=========================== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* 태블릿: 2열 */
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 모바일: 1열 */
+@media (max-width: 480px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===========================
+   요약 카드
+=========================== */
+.summary-card {
+  background-color: var(--white);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 내 카드 강조 */
+.summary-card--mine {
+  border: 3px solid var(--blue);
+  box-shadow: 0 6px 24px rgba(45, 107, 228, 0.25);
+  transform: translateY(-4px);
+}
+
+/* ===========================
+   카드 이미지 + 배지
+=========================== */
+.summary-card__image-wrap {
+  position: relative;
+}
+
+.summary-card__photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.summary-card__badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--white);
+  color: var(--text-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ===========================
+   카드 텍스트 영역
+=========================== */
+.summary-card__info {
+  padding: 14px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.summary-card__name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.summary-card__role {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+.summary-card__bio {
+  font-size: 0.83rem;
+  color: var(--text-gray);
+}
+
+/* ===========================
+   상세 카드 목록 (1열)
+=========================== */
+.detail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===========================
+   상세 카드
+=========================== */
+.detail-card {
+  background-color: var(--white);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.detail-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.detail-card__name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.detail-card__role {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+.detail-card__track {
+  font-size: 0.8rem;
+  color: var(--text-track);
+}
+
+/* ===========================
+   섹션
+=========================== */
+.detail-card__section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.section-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.section-body {
+  font-size: 0.875rem;
+  color: var(--text-gray);
+}
+
+/* ===========================
+   불릿 리스트
+=========================== */
+.bullet-list {
+  list-style: disc;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.bullet-list li {
+  font-size: 0.875rem;
+  color: var(--text-gray);
+}
+
+/* ===========================
+   링크
+=========================== */
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
