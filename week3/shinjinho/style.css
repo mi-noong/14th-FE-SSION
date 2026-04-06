@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+}
+
+#wrapper{
+  /* 내부 요소들을 Grid(격자) 형태로 배치 */
+  display:grid;
+
+  /* 열을 자동으로 생성 
+    auto-fit: 화면 크기에 맞게 카드 개수 자동 조절
+    minmax(320px, 1fr): 최소 320px, 최대 1fr */
+  grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+
+  /* 카드 사이의 간격을 1rem로 설정 */
+  grid-gap:1rem;
+
+} 
+
+.card {
+  background-color: black;
+  box-shadow:0px 1px 5px #222;
+}
+
+
+/* card 안에 있는 header 요소 */
+.card > header {
+  font-size:1.5rem;
+  padding:0.5rem;
+}
+
+/* card 안에 있는 p(본문 텍스트) */
+.card > p {
+  padding:0.5rem;
+  line-height:1.6em;
+}
+
+/* card 안에 있는 이미지 */
+.card > img {
+/* 이미지가 카드보다 커지지 않도록 설정
+  → 카드 너비에 맞게 자동으로 줄어듦 */
+  max-width:100%;
+}
+.card1 > img {
+/* 이미지가 카드보다 커지지 않도록 설정
+  → 카드 너비에 맞게 자동으로 줄어듦 */
+  max-width:100%;
+}
+
+.page{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap:16px;
+}
+.page .card {
+  background-color: rgb(219, 236, 242);
+  box-shadow:0px 1px 1px #222;
+  padding: 20px;
+  border-radius: 8px;
+  height: auto;
+}
+.page .card1 {
+  background-color: rgb(107, 107, 245);
+  box-shadow:0px 1px 1px #222;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid blue;
+  height: auto;
+}
+
+.profile-image {
+  width: 100%;
+  height: auto;
+  
+} 
+
+.detail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.detail-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 16px;
+}
+
+.detail-name {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.detail-role {
+  margin: 0;
+  font-size: 16px;
+  color: #666666;
+}
+
+.detail-desc {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333333;
+}
+
+.control-panel button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: #222;
+  color: white;
+  cursor: pointer;
+}
+
+.control-panel button:hover {
+  opacity: 0.9;
+}
+
+.control-panel input,
+.control-panel select,
+.control-panel textarea {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.detail-card ul {
+  margin-top: 8px;
+  padding-left: 20px;
+}
