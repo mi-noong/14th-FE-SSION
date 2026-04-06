@@ -18,6 +18,11 @@
     }
 }
 
+.Details-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
 .my-card {
     position: relative;
     background: white;
@@ -46,7 +51,7 @@
     background: white;
     border-radius: 25px;
     overflow: hidden;
-    margin: 20px 30px;
+    margin: 20px 20px;
     padding: 8px;
     box-shadow: 2px 2px 2px #000000;
     text-align: left;
@@ -69,14 +74,34 @@ img{
 
 .text{
     position: absolute;
-    top: 2px;
-    right:10px;
-    color: black;
-    border: 10px;
-    padding: 1px 1px;
-    margin: 10px;
-    border-radius: 10px;
+    top: 10px;
+    right: 10px;
     background: white;
+    padding: 1px 1px;
+    border-radius: 5px;
+}
+
+.button{
+    background: white;
+    padding: 1px 1px;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px #000000;
+}
+
+form{
+    position: relative;
+    margin: 20px 20px;
+    border-radius: 15px;
+    padding: 5px;
+    background: white; 
+}
+
+.full-width-input{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 h2{
