@@ -1,0 +1,173 @@
+/* ===========================
+   Variables
+=========================== */
+:root {
+  --bg: #f0f2f5;
+  --white: #ffffff;
+  --text-dark: #111111;
+  --text-gray: #555555;
+  --text-track: #888888;
+  --blue: #2d6be4;
+  --card-radius: 14px;
+  --card-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* ===========================
+   Reset
+=========================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===========================
+   Base
+=========================== */
+body {
+  font-family: var(--font);
+  background-color: var(--bg);
+  color: var(--text-dark);
+  line-height: 1.65;
+}
+
+/* ===========================
+   Page
+=========================== */
+.page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 32px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===========================
+   요약 카드: 세로 배치, 작은 카드
+=========================== */
+.profile-card {
+  width: 260px;
+  background-color: var(--white);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-card__photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.profile-card__info {
+  padding: 14px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.profile-card__name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.profile-card__role {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+.profile-card__bio {
+  font-size: 0.85rem;
+  color: var(--text-gray);
+}
+
+/* ===========================
+   상세 프로필: 흰색 카드 배경
+=========================== */
+.profile-detail {
+  background-color: var(--white);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile-detail__header {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.profile-detail__name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.profile-detail__role {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+.profile-detail__track {
+  font-size: 0.8rem;
+  color: var(--text-track);
+}
+
+/* ===========================
+   섹션
+=========================== */
+.profile-detail__section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.section-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.section-body {
+  font-size: 0.875rem;
+  color: var(--text-gray);
+}
+
+/* ===========================
+   불릿 리스트
+=========================== */
+.bullet-list {
+  list-style: disc;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.bullet-list li {
+  font-size: 0.875rem;
+  color: var(--text-gray);
+}
+
+/* ===========================
+   링크
+=========================== */
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
