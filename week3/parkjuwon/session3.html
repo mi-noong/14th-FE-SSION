@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js에서 잘 모르겠어서 gpt 사용했어요</title>
+    <link rel="stylesheet" href="session3.css">
+</head>
+<body>
+    <div class="controls">
+        <button id="add">아기 사자 추가</button>
+        <div class="addcard" style="display: none;">
+        <div class="row">
+            <div class="field">
+                <p>이름</p>
+                <input id="name" placeholder="예: 박주원">
+            </div>
+            <div class="field">
+                <p>파트</p>
+                <select id="part">
+                    <option value="" disabled selected>파트 선택</option>
+                    <option value="frontend">Frontend</option>
+                    <option value="backend">Backend</option>
+                    <option value="Design">Design</option>
+                </select>
+            </div>
+        </div>
+        <p>관심 기술(쉼표로 구분)</p>
+        <input placeholder="예:JavaScript, Html, CSS">
+        <p>한 줄 소개(요약 카드)</p>
+        <input placeholder="예:3주차 DOM 연습 중!!">
+        <p>자기소개(상세 카드)</p>
+        <input placeholder="HTML/CSS로 구조를 만들고, JS로 데이터를 바꾸면 화면이 바뀌는 경험을 하고 있습니다.">
+        <div class="row">
+            <div class="field">
+                <p>Email</p>
+                <input placeholder="예:lion@example.com">
+                </div>
+                <div class="field">
+                <p>Phone</p>
+                <input placeholder="예:010-1234-5678">
+            </div>
+        </div>
+            <p>Website</p>
+            <input placeholder="예:https://example.com">
+            <p>한 마디</p>
+            <input placeholder="예:데이터 바꾸면 화면도 바뀐다!">
+            <button id="creatCard">추가</button>                               
+        </div>
+    </div>
+        <button id="del">마지막 아기 사자 삭제</button>
+        <p id="count"></p>
+        <script src="session3.js"></script>
+        <br>
+    <div class="cardlist">
+    <div class="card">
+        <img src="C:\Users\user AFE\Desktop\멋사대학\mydog.202020198.jpg" alt="사진" width="200" height="200">        
+        <h2>박주원</h2>
+        <p class="myrole"> Frontend</p>
+        <p>처음 배우는 프론트엔드 개발자입니다!</p>
+    </div>
+    <div class="card">
+        <img src="C:\Users\user AFE\Desktop\멋사대학\1.jpg" alt="사진" width="200" height="200">        
+        <h2>풀</h2>
+        <p class="role"> Frontend</p>
+        <p>화이팅!</p>
+    </div>
+    <div class="card">
+        <img src="C:\Users\user AFE\Desktop\멋사대학\2.jpg" alt="사진" width="200" height="200">        
+        <h2>달</h2>
+        <p class="role"> Backend</p>
+        <p>개발자입니다!</p>
+    </div>
+    <div class="card">
+        <img src="C:\Users\user AFE\Desktop\멋사대학\3.jpg" alt="사진" width="200" height="200">        
+        <h2>나무</h2>
+        <p class="role"> Design</p>
+        <p>개발자 아닙니다</p>
+    </div>
+    <div class="card">
+        <img src="C:\Users\user AFE\Desktop\멋사대학\4.jpg" alt="사진" width="200" height="200">        
+        <h2>고양이</h2>
+        <p class="role"> Design</p>
+        <p>디자인에 관심이 있습니다</p>
+    </div>
+    <div class="card">
+        <img src="C:\Users\user AFE\Desktop\멋사대학\5.jpg" alt="사진" width="200" height="200">        
+        <h2>곰</h2>
+        <p class="role"> Frontend</p>
+        <p>html에 관심이 있습니다</p>
+    </div>
+    <div class="card">
+        <img src="C:\Users\user AFE\Desktop\멋사대학\6.jpg" alt="사진" width="200" height="200">        
+        <h2>가</h2>
+        <p class="role"> Backend</p>
+        <p>새로운 경험을 해보고 싶습니다</p>
+    </div>
+    <div class="card">
+        <img src="C:\Users\user AFE\Desktop\멋사대학\7.jpg" alt="사진" width="200" height="200">        
+        <h2>나다라</h2>
+        <p class="role"> Frontend</p>
+        <p>구조적인 UI에 관심 있습니다</p>
+    </div>
+    <div class="card">
+        <img src="C:\Users\user AFE\Desktop\멋사대학\8.jpg" alt="사진" width="200" height="200">        
+        <h2>abc</h2>
+        <p class="role"> Design</p>
+        <p>디자인 시스템에 대해 잘 압니다</p>
+    </div>
+    </div>
+
+
+    <div class="introduce">
+        <h1>박주원</h1>
+        <p class="myrole">Frontend</p>
+        <p>LION TRACK</p>
+        <br>
+        <h3>자기소개</h3>
+        <p>html과 css는 처음이지만 열심히 노력히여 하나하나 이해하며 지금도 이것을 만들면서 성장해 나아가고 있습니다.</p>
+        <br>
+        <h3>연락처</h3>
+        <ul>
+            <li>Email: 0601sunny@gmail.com</li>
+            <li>Phone:010-6215-2640</li>
+        </ul>
+        <br>
+        <h3>관심 기술</h3>
+        <ul>
+            <li>AI(인공지능)</li>
+            <li>web 개발</li>
+            <li>앱 개발</li>
+        </ul>
+        <br>
+        <h3>한 마디</h3>
+        <p>처음이라서 미숙하고 잘 모르는 것도 많지만 차근차근 쌓아가 노력하며 실력을 키워나아가는 모습 보여드리겠습니다<p>
+    </div>
+    <div class="introduce">
+        <h1>풀</h1>
+        <p class="role">Frontend</p>
+        <p>LION TRACK</p>
+        <br>
+        <h3>자기소개</h3>
+        <p>html과 css는 처음이지만 열심히 노력히여 하나하나 이해하며 지금도 이것을 만들면서 성장해 나아가고 있습니다.</p>
+        <br>
+        <h3>연락처</h3>
+        <ul>
+            <li>Email: 0601sunny@gmail.com</li>
+            <li>Phone:010-6215-2640</li>
+        </ul>
+        <br>
+        <h3>관심 기술</h3>
+        <ul>
+            <li>AI(인공지능)</li>
+            <li>web 개발</li>
+            <li>앱 개발</li>
+        </ul>
+        <br>
+        <h3>한 마디</h3>
+        <p>처음이라서 미숙하고 잘 모르는 것도 많지만 차근차근 쌓아가 노력하며 실력을 키워나아가는 모습 보여드리겠습니다<p>
+    </div>
+    <div class="introduce">
+        <h1>달</h1>
+        <p class="role">Backend</p>
+        <p>LION TRACK</p>
+        <br>
+        <h3>자기소개</h3>
+        <p>html과 css는 처음이지만 열심히 노력히여 하나하나 이해하며 지금도 이것을 만들면서 성장해 나아가고 있습니다.</p>
+        <br>
+        <h3>연락처</h3>
+        <ul>
+            <li>Email: 0601sunny@gmail.com</li>
+            <li>Phone:010-6215-2640</li>
+        </ul>
+        <br>
+        <h3>관심 기술</h3>
+        <ul>
+            <li>AI(인공지능)</li>
+            <li>web 개발</li>
+            <li>앱 개발</li>
+        </ul>
+        <br>
+        <h3>한 마디</h3>
+        <p>처음이라서 미숙하고 잘 모르는 것도 많지만 차근차근 쌓아가 노력하며 실력을 키워나아가는 모습 보여드리겠습니다<p>
+    </div>
+    <div class="introduce">
+        <h1>나무</h1>
+        <p class="role">Design</p>
+        <p>LION TRACK</p>
+        <br>
+        <h3>자기소개</h3>
+        <p>html과 css는 처음이지만 열심히 노력히여 하나하나 이해하며 지금도 이것을 만들면서 성장해 나아가고 있습니다.</p>
+        <br>
+        <h3>연락처</h3>
+        <ul>
+            <li>Email: 0601sunny@gmail.com</li>
+            <li>Phone:010-6215-2640</li>
+        </ul>
+        <br>
+        <h3>관심 기술</h3>
+        <ul>
+            <li>AI(인공지능)</li>
+            <li>web 개발</li>
+            <li>앱 개발</li>
+        </ul>
+        <br>
+        <h3>한 마디</h3>
+        <p>처음이라서 미숙하고 잘 모르는 것도 많지만 차근차근 쌓아가 노력하며 실력을 키워나아가는 모습 보여드리겠습니다<p>
+    </div>
+    <div class="introduce">
+        <h1>고양이</h1>
+        <p class="role">Design</p>
+        <p>LION TRACK</p>
+        <br>
+        <h3>자기소개</h3>
+        <p>html과 css는 처음이지만 열심히 노력히여 하나하나 이해하며 지금도 이것을 만들면서 성장해 나아가고 있습니다.</p>
+        <br>
+        <h3>연락처</h3>
+        <ul>
+            <li>Email: 0601sunny@gmail.com</li>
+            <li>Phone:010-6215-2640</li>
+        </ul>
+        <br>
+        <h3>관심 기술</h3>
+        <ul>
+            <li>AI(인공지능)</li>
+            <li>web 개발</li>
+            <li>앱 개발</li>
+        </ul>
+        <br>
+        <h3>한 마디</h3>
+        <p>처음이라서 미숙하고 잘 모르는 것도 많지만 차근차근 쌓아가 노력하며 실력을 키워나아가는 모습 보여드리겠습니다<p>
+    </div>
+    <div class="introduce">
+        <h1>곰</h1>
+        <p class="role">Frontend</p>
+        <p>LION TRACK</p>
+        <br>
+        <h3>자기소개</h3>
+        <p>html과 css는 처음이지만 열심히 노력히여 하나하나 이해하며 지금도 이것을 만들면서 성장해 나아가고 있습니다.</p>
+        <br>
+        <h3>연락처</h3>
+        <ul>
+            <li>Email: 0601sunny@gmail.com</li>
+            <li>Phone:010-6215-2640</li>
+        </ul>
+        <br>
+        <h3>관심 기술</h3>
+        <ul>
+            <li>AI(인공지능)</li>
+            <li>web 개발</li>
+            <li>앱 개발</li>
+        </ul>
+        <br>
+        <h3>한 마디</h3>
+        <p>처음이라서 미숙하고 잘 모르는 것도 많지만 차근차근 쌓아가 노력하며 실력을 키워나아가는 모습 보여드리겠습니다<p>
+    </div>
+    <div class="introduce">
+        <h1>가</h1>
+        <p class="role">Backend</p>
+        <p>LION TRACK</p>
+        <br>
+        <h3>자기소개</h3>
+        <p>html과 css는 처음이지만 열심히 노력히여 하나하나 이해하며 지금도 이것을 만들면서 성장해 나아가고 있습니다.</p>
+        <br>
+        <h3>연락처</h3>
+        <ul>
+            <li>Email: 0601sunny@gmail.com</li>
+            <li>Phone:010-6215-2640</li>
+        </ul>
+        <br>
+        <h3>관심 기술</h3>
+        <ul>
+            <li>AI(인공지능)</li>
+            <li>web 개발</li>
+            <li>앱 개발</li>
+        </ul>
+        <br>
+        <h3>한 마디</h3>
+        <p>처음이라서 미숙하고 잘 모르는 것도 많지만 차근차근 쌓아가 노력하며 실력을 키워나아가는 모습 보여드리겠습니다<p>
+    </div>
+    <div class="introduce">
+        <h1>나다라</h1>
+        <p class="role">Frontend</p>
+        <p>LION TRACK</p>
+        <br>
+        <h3>자기소개</h3>
+        <p>html과 css는 처음이지만 열심히 노력히여 하나하나 이해하며 지금도 이것을 만들면서 성장해 나아가고 있습니다.</p>
+        <br>
+        <h3>연락처</h3>
+        <ul>
+            <li>Email: 0601sunny@gmail.com</li>
+            <li>Phone:010-6215-2640</li>
+        </ul>
+        <br>
+        <h3>관심 기술</h3>
+        <ul>
+            <li>AI(인공지능)</li>
+            <li>web 개발</li>
+            <li>앱 개발</li>
+        </ul>
+        <br>
+        <h3>한 마디</h3>
+        <p>처음이라서 미숙하고 잘 모르는 것도 많지만 차근차근 쌓아가 노력하며 실력을 키워나아가는 모습 보여드리겠습니다<p>
+    </div>
+    <div class="introduce">
+        <h1>abc</h1>
+        <p class="role">Design</p>
+        <p>LION TRACK</p>
+        <br>
+        <h3>자기소개</h3>
+        <p>html과 css는 처음이지만 열심히 노력히여 하나하나 이해하며 지금도 이것을 만들면서 성장해 나아가고 있습니다.</p>
+        <br>
+        <h3>연락처</h3>
+        <ul>
+            <li>Email: 0601sunny@gmail.com</li>
+            <li>Phone:010-6215-2640</li>
+        </ul>
+        <br>
+        <h3>관심 기술</h3>
+        <ul>
+            <li>AI(인공지능)</li>
+            <li>web 개발</li>
+            <li>앱 개발</li>
+        </ul>
+        <br>
+        <h3>한 마디</h3>
+        <p>처음이라서 미숙하고 잘 모르는 것도 많지만 차근차근 쌓아가 노력하며 실력을 키워나아가는 모습 보여드리겠습니다<p>
+    </div>
+</body>
+</html>
