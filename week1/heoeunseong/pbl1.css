@@ -1,0 +1,25 @@
+.card{
+    background-color: #ffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    margin: 60px;
+}
+
+.gray{
+    background-color: #f8f9fa;
+}
+
+.cardbox{
+    background-color: #ffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    margin: 60px;
+    width: 330px;
+    padding-left: 30px;
+}
+
+.point{
+    color: #4e73df;
+}

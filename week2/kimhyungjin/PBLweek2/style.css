@@ -1,0 +1,66 @@
+
+
+/* Dash Board */
+
+.card-grid{
+    display : grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px,1fr));
+    /* grid-template-columns: repeat(auto-fill, minmax(280px, 1fr))
+    열을 어떻게 나눌지 정하는 핵심 코드예요. 
+    repeat(auto-fill, ...) → "빈 공간이 허락하는 만큼 열을 반복해서 채워"
+    minmax(360px, 1fr) → "각 열의 너비는 최소 360px, 최대 1fr"
+    1fr → 남은 공간을 균등하게 나눠 갖겠다는 단위예요*/
+    gap:16px;
+}
+
+.card-grid .card {
+    background-color: lightblue;
+    border-radius: 8px;
+    padding: 0;          /* padding 제거 */
+    overflow: hidden;    /* 이미지가 카드 모서리 밖으로 안 나가게 */
+}
+
+summary {
+    list-style: none;  /* 기본 삼각형 제거 */
+}
+summary::-webkit-details-marker {
+    display: none;  /* 크롬/사파리용 */
+}
+
+.arrow {
+    display: flex;
+    justify-content: space-between;  /* 양쪽 끝으로 밀기 */
+    align-items: center;
+}
+/* 내꺼 강조*/
+.Mine{
+    border: 1px solid blue;
+    box-shadow: inset 0 0 10px blue; /* 내부 그림자 효과 */
+    border-radius: 8px;
+}
+/* 문구 스타일 */
+
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+p {
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    font-size: 18px;
+    line-height: 0.5;
+    font-weight: bold;
+}
+
+p .col{
+    color: blue;
+}
+
+p .coll{
+    color: green;
+}
+
+/* 이미지 스타일 */
+.card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;      /* 이미지 아래 여백 제거 */
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>아기 사자 대시보드</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+     
+    <!-- 컨트롤 -->
+    <section id="controls">
+      <button id="addBtn">아기 사자 추가</button>
+      <button id="removeBtn">마지막 삭제</button>
+      <p id="totalCount">총 {totalCount}명</p>
+    </section>
+    <!--폼 -->
+    
+    <section id="formSection" hidden>
+        <h2>아기 사자 추가</h2>
+        <div class = InputForm>
+        <form id="lionForm">
+          <input type="text" id="nameInput" placeholder="이름" required />
+
+          <select id="partInput">
+            <option value="Frontend">Frontend</option>
+            <option value="Backend">Backend</option>
+            <option value="Design">Design</option>
+          </select>
+
+          <input
+          type="text"
+          id="interestInput"
+          placeholder="관심 기술 (쉼표로 구분)"
+          required
+          />
+
+          <input
+          type="text"
+          id="oneLineInput"
+          placeholder="한 줄 소개"
+          required
+          />
+
+          <textarea
+            id="introInput"
+            placeholder="자기소개 (상세)"
+            required
+        ></textarea>
+
+          <input type="email" id="emailInput" placeholder="이메일" />
+          <input type="tel" id="phoneInput" placeholder="전화번호" />
+          <input type="url" id="siteInput" placeholder="웹사이트" />
+
+          <input
+            type="text"
+            id="messageInput"
+            placeholder="한 마디"
+          />
+
+          <div class="form-buttons">
+            <button type="submit">추가하기</button>
+            <button type="button" id="cancelBtn">취소</button>
+          </div>
+        </form>
+        </div>
+      </section>
+
+
+
+    <!-- 요약 카드 영역 -->
+   
+<section class="summary-section">
+      <h2>아기 사자 자기소개 요약 카드</h2>
+      <div class="card-grid" id="summaryGrid">
+        <!--JS로 summary-card 생성 -->
+      </div>
+    </section>
+
+
+    <!--  상세 소개 영역 -->
+    
+    <!-- =========================
+         하단: 상세 카드 영역
+    ========================== -->
+    <section class="detail-section">
+      <h2>상세 자기소개</h2>
+      <div id="detailList">
+        <!--  JS로 detail-card 생성 -->
+      </div>
+
+
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
