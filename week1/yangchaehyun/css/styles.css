@@ -1,0 +1,33 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: fit-content;
+    margin: 50px;
+    padding: 50px;
+    background: #ffffff;
+    color: #000000;
+    border: 1px solid black;
+    box-shadow: #000000 2px 2px 2px;
+    border-radius: 25px;
+}
+
+p{  
+    line-height: 0.05em;
+    font-weight: bold;
+    color: #0000FF;
+}
+
+.gray{
+    color: gray;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.box-moving:hover {
+    transform: translateY(-8px);
+}
+
+.bg-color{
+    background-color: #cac3c3e2;
+}
