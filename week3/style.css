@@ -1,0 +1,99 @@
+.gray {
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.main-title { margin: 40px 0 20px 20px; color: #333; }
+
+.grid {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: 1fr; 
+}
+
+@media (min-width: 768px) { .grid { grid-template-columns: repeat(2, 1fr); } } 
+@media (min-width: 1024px) { .grid { grid-template-columns: repeat(3, 1fr); } } 
+
+.cardbox {
+    background-color: #ffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); 
+    padding: 15px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.my-card { border: 3px solid #4e73df; transform: scale(1.02); }
+
+.img-frame { position: relative; width: 100%; }
+.img-frame img { width: 100%; height: 230px; object-fit: cover; border-radius: 15px; }
+
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+}
+
+.cardbox-text { padding: 10px 5px; }
+.cardbox-text h2 { margin: 0; font-size: 1.3rem; }
+
+.point { color: #4e73df; }
+
+.detail-list { display: flex; flex-direction: column; gap: 10px; }
+
+.card {
+    background-color: #ffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    margin: 20px;
+}
+
+.line { border: 0; height: 1px; background: #ddd; margin: 60px 0; }
+
+.control-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0 20px 20px; 
+}
+
+.action-btn {
+    background-color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 10px;     
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+}
+
+.count-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-left: 10px;
+}
+
+.hidden{
+    display: none;
+}
+
+
+#card-container {
+    display: contents;       
+}
