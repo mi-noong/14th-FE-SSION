@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TodoList</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Todo List</h1>
+
+        <div class="input-group">
+            <input id="input" type="text" placeholder="할 일을 입력하세요...">
+            <button id="addBtn">추가</button>
+        </div>
+
+        <div class="top-bar">
+            <span id="count">남은 할 일: <b>0</b></span>
+            <button id="completeAll">전체 완료</button>
+        </div>
+
+        <div class="filter">
+            <button id="all" class="active">전체</button>
+            <button id="done">완료</button>
+            <button id="notDone">미완료</button>
+        </div>
+
+        <ul id="list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
