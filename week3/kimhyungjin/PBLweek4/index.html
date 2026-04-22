@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아기사자 명단 대시보드</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="wrapper">
+
+        <!-- ===== 상단 컨트롤 바 ===== -->
+        <div class="control-bar">
+            <button class="btn btn-add" id="btn-toggle-form">＋ 아기사자 추가</button>
+            <button class="btn btn-delete" id="btn-delete-last">✕ 마지막 삭제</button>
+            <span class="count-text" id="count-text">총 9명</span>
+            <span id="async-status">✅ 준비 완료</span>
+
+            <!-- 랜덤 추가 및 전체 새로 고침.-->
+            <button id="btn-add-1">랜덤 추가 1명</button>
+            <button id="btn-add-5">랜덤 추가 5명</button>
+            <button id="btn-refresh">전체 새로 고침</button>
+            <button id="btn-retry" style="display:none">재시도</button>
+        </div>
+
+        <!-- Option UI -->
+        <div class="view-options">
+            <select id="filter-part">
+                <option value="">전체</option>
+                <option value="Frontend">FrontEnd</option>
+                <option value="Backend">Backend</option>
+                <option value="Design">Design</option>
+            </select>
+
+            <select id="filter-sort">
+                <option value="newest">최신 추가순</option>
+                <option value="name">이름순</option>
+            </select>
+
+            <input type="text" id="filter-search" placeholder="이름 검색...">
+        </div>
+        <!-- ===== 추가 폼 ===== -->
+        <div id="add-form-wrap">
+            <h2>🦁 새 아기사자 추가</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="f-name">이름 *</label>
+                    <input type="text" id="f-name" placeholder="이름을 입력하세요">
+                    <span class="field-error" id="err-name"></span>
+                </div>
+                <div class="form-group">
+                    <label for="f-part">파트 *</label>
+                    <select id="f-part">
+                        <option value="">-- 선택하세요 --</option>
+                        <option value="Frontend">Frontend</option>
+                        <option value="Backend">Backend</option>
+                        <option value="Design">Design</option>
+                    </select>
+                    <span class="field-error" id="err-part"></span>
+                </div>
+                <div class="form-group">
+                    <label for="f-skills">관심 기술 * (쉼표로 구분)</label>
+                    <input type="text" id="f-skills" placeholder="예: HTML, CSS, JavaScript">
+                    <span class="field-error" id="err-skills"></span>
+                </div>
+                <div class="form-group">
+                    <label for="f-short-intro">한 줄 소개 * (요약 카드용)</label>
+                    <input type="text" id="f-short-intro" placeholder="짧은 한 마디!">
+                    <span class="field-error" id="err-short-intro"></span>
+                </div>
+                <div class="form-group full-width">
+                    <label for="f-intro">자기소개 * (상세 카드용)</label>
+                    <textarea id="f-intro" placeholder="자세한 자기소개를 입력하세요"></textarea>
+                    <span class="field-error" id="err-intro"></span>
+                </div>
+                <div class="form-group">
+                    <label for="f-phone">전화번호 *</label>
+                    <input type="text" id="f-phone" placeholder="010-0000-0000">
+                    <span class="field-error" id="err-phone"></span>
+                </div>
+                <div class="form-group">
+                    <label for="f-email">이메일 *</label>
+                    <input type="email" id="f-email" placeholder="example@email.com">
+                    <span class="field-error" id="err-email"></span>
+                </div>
+                <div class="form-group">
+                    <label for="f-website">웹사이트</label>
+                    <input type="text" id="f-website" placeholder="https://...">
+                </div>
+                <div class="form-group">
+                    <label for="f-quote">한 마디</label>
+                    <input type="text" id="f-quote" placeholder="나를 표현하는 한 마디!">
+                </div>
+            </div>
+            <div class="form-actions">
+                <button class="btn btn-submit" id="btn-submit">추가하기</button>
+                <button type="button" id="btn-fill-random">🎲 랜덤 값 채우기</button>  <!-- 👈 추가 -->
+                <button class="btn btn-cancel" id="btn-cancel">취소</button>
+            </div>
+        </div>
+
+        <!-- ===== 중단: 요약 카드 그리드 ===== -->
+        <div class="card-grid" id="card-grid">
+
+            <!-- 카드 1: 김형진 (본인) -->
+            <div class="Mine"
+                data-name="김형진"
+                data-part="FrontEnd"
+                data-skills="HTML,CSS,JavaScript"
+                data-short-intro="반 오십의 열정 열정 열정!"
+                data-intro=""
+                data-phone="010-9188-0817"
+                data-email="khj020817@naver.com"
+                data-website=""
+                data-quote="반 오십의 열정!">
+                <details class="card">
+                    <summary>
+                        <img src="img/profile.jpg" alt="김형진">
+                        <p>김형진</p>
+                        <p><span class="badge">FrontEnd</span></p>
+                        <p class="short-intro">반 오십의 열정 열정 열정!</p>
+                        <span class="arrow">▼</span>
+                    </summary>
+                    <div class="detail">
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                        <p>010-9188-0817</p>
+                        <p>khj020817@naver.com</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- 카드 2: 양유진 -->
+            <div data-name="양유진"
+                data-part="Backend"
+                data-skills="Node.js, Python, SQL"
+                data-short-intro="먀~"
+                data-intro=""
+                data-phone="비공개"
+                data-email="비공개"
+                data-website=""
+                data-quote="빵먹다살진떡">
+                <details class="card">
+                    <summary>
+                        <img src="img/yangyujin.jpg" alt="양유진">
+                        <p>양유진</p>
+                        <p><span class="badge">Backend</span></p>
+                        <p class="short-intro">먀~</p>
+                        <span class="arrow">▼</span>
+                    </summary>
+                    <div class="detail">
+                        <ul>
+                            <li>Node.js</li>
+                            <li>Python</li>
+                            <li>SQL</li>
+                        </ul>
+                        <p>전화번호 비공개</p>
+                        <p>메일 비공개</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- 카드 3: 리즈 -->
+            <div data-name="리즈"
+                data-part="Design"
+                data-skills="Figma, Illustrator, Photoshop"
+                data-short-intro="리즈시절 갱신 중"
+                data-intro=""
+                data-phone="비공개"
+                data-email="비공개"
+                data-website=""
+                data-quote="IVE">
+                <details class="card">
+                    <summary>
+                        <img src="img/lzy.jpg" alt="리즈">
+                        <p>리즈</p>
+                        <p><span class="badge">Design</span></p>
+                        <p class="short-intro">리즈시절 갱신 중</p>
+                        <span class="arrow">▼</span>
+                    </summary>
+                    <div class="detail">
+                        <ul>
+                            <li>Figma</li>
+                            <li>Illustrator</li>
+                            <li>Photoshop</li>
+                        </ul>
+                        <p>전화번호 비공개</p>
+                        <p>메일 비공개</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- 카드 4: 바쿠고 카츠키 -->
+            <div data-name="바쿠고 카츠키"
+                data-part="Frontend"
+                data-skills="HTML,CSS,JavaScript"
+                data-short-intro="츤데레 양아치"
+                data-intro=""
+                data-phone="비공개"
+                data-email="비공개"
+                data-website=""
+                data-quote="Explosion">
+                <details class="card">
+                    <summary>
+                        <img src="img/bakugo.jpg" alt="바쿠고 카츠키">
+                        <p>바쿠고 카츠키</p>
+                        <p><span class="badge">Frontend</span></p>
+                        <p class="short-intro">츤데레 양아치</p>
+                        <span class="arrow">▼</span>
+                    </summary>
+                    <div class="detail">
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                        <p>전화번호 비공개</p>
+                        <p>메일 비공개</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- 카드 5: 미도리아 이즈쿠 -->
+            <div data-name="미도리아 이즈쿠"
+                data-part="Backend"
+                data-skills="Node.js, Python, SQL"
+                data-short-intro="마지막 남은 불씨"
+                data-intro=""
+                data-phone="비공개"
+                data-email="비공개"
+                data-website=""
+                data-quote="One For All">
+                <details class="card">
+                    <summary>
+                        <img src="img/midoriya.jpg" alt="미도리아 이즈쿠">
+                        <p>미도리아 이즈쿠</p>
+                        <p><span class="badge">Backend</span></p>
+                        <p class="short-intro">마지막 남은 불씨</p>
+                        <span class="arrow">▼</span>
+                    </summary>
+                    <div class="detail">
+                        <ul>
+                            <li>Node.js</li>
+                            <li>Python</li>
+                            <li>SQL</li>
+                        </ul>
+                        <p>전화번호 비공개</p>
+                        <p>메일 비공개</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- 카드 6: 토도로키 쇼토 -->
+            <div data-name="토도로키 쇼토"
+                data-part="Design"
+                data-skills="Figma, Illustrator, Photoshop"
+                data-short-intro="얼음과 불의 조화"
+                data-intro=""
+                data-phone="비공개"
+                data-email="비공개"
+                data-website=""
+                data-quote="Half-Cold Half-Hot">
+                <details class="card">
+                    <summary>
+                        <img src="img/todorokishoto.jpg" alt="토도로키 쇼토">
+                        <p>토도로키 쇼토</p>
+                        <p><span class="badge">Design</span></p>
+                        <p class="short-intro">얼음과 불의 조화</p>
+                        <span class="arrow">▼</span>
+                    </summary>
+                    <div class="detail">
+                        <ul>
+                            <li>Figma</li>
+                            <li>Illustrator</li>
+                            <li>Photoshop</li>
+                        </ul>
+                        <p>전화번호 비공개</p>
+                        <p>메일 비공개</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- 카드 7: 사이먼 도미닉 -->
+            <div data-name="사이먼 도미닉"
+                data-part="Frontend"
+                data-skills="HTML,CSS,JavaScript"
+                data-short-intro="부산 사나이"
+                data-intro=""
+                data-phone="비공개"
+                data-email="비공개"
+                data-website=""
+                data-quote="(구) AOMG">
+                <details class="card">
+                    <summary>
+                        <img src="img/simon.jpg" alt="사이먼 도미닉">
+                        <p>사이먼 도미닉</p>
+                        <p><span class="badge">FrontEnd</span></p>
+                        <p class="short-intro">부산 사나이</p>
+                        <span class="arrow">▼</span>
+                    </summary>
+                    <div class="detail">
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                        <p>전화번호 비공개</p>
+                        <p>메일 비공개</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- 카드 8: 양홍원 -->
+            <div data-name="양홍원"
+            data-part="Backend"
+            data-skills="Node.js, Python, SQL"
+                data-short-intro="스윙스형은 사랑입니다."
+                data-intro=""
+                data-phone="비공개"
+                data-email="비공개"
+                data-website=""
+                data-quote="Indigo Music">
+                <details class="card">
+                    <summary>
+                        <img src="img/youngb.jpg" alt="양홍원">
+                        <p>양홍원</p>
+                        <p><span class="badge">Backend</span></p>
+                        <p class="short-intro">스윙스형은 사랑입니다.</p>
+                        <span class="arrow">▼</span>
+                    </summary>
+                    <div class="detail">
+                        <ul>
+                            <li>Node.js</li>
+                            <li>Python</li>
+                            <li>SQL</li>
+                        </ul>
+                        <p>전화번호 비공개</p>
+                        <p>메일 비공개</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- 카드 9: 키드밀리 -->
+            <div data-name="키드밀리"
+                data-part="Design"
+                data-skills="Figma, Illustrator, Photoshop"
+                data-short-intro="혼모노 혼모노"
+                data-intro=""
+                data-phone="비공개"
+                data-email="비공개"
+                data-website=""
+                data-quote="WYBH">
+                <details class="card">
+                    <summary>
+                        <img src="img/kidmilli.jpg" alt="키드밀리">
+                        <p>키드밀리</p>
+                        <p><span class="badge">Design</span></p>
+                        <p class="short-intro">혼모노 혼모노</p>
+                        <span class="arrow">▼</span>
+                    </summary>
+                    <div class="detail">
+                        <ul>
+                            <li>Figma</li>
+                            <li>Illustrator</li>
+                            <li>Photoshop</li>
+                        </ul>
+                        <p>전화번호 비공개</p>
+                        <p>메일 비공개</p>
+                    </div>
+                </details>
+            </div>
+
+        </div><!-- /#card-grid -->
+
+        <!-- ===== 하단: 상세 자기소개 영역 ===== -->
+        <div class="detail-section">
+            <h2>📋 상세 자기소개</h2>
+            <div class="detail-list" id="detail-list"></div>
+        </div>
+
+    </div><!-- /.wrapper -->
+
+    <script src="./srcipt.js"></script>
+</body>
+</html>
