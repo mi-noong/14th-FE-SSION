@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>23017046 양채현 - 아기 사자 대시보드</title>
+</head>
+<body class="bg-color">
+    <header class="controls">
+        <div class="main-actions">
+            <button type="button" class="button" id="addLion"><b>아기 사자 추가</b></button>
+            <button type="button" class="button" id="removeLastLion"><b>마지막 아기 사자 삭제</b></button>
+            <span id="totalCountDisplay">총 <span id="totalCount">0</span>명</span>
+        </div>
+
+        <div class="api-controls">
+            <button type="button" class="button" id="addOneRandom">랜덤 1명 추가</button>
+            <button type="button" class="button" id="addFiveRandom">랜덤 5명 추가</button>
+            <button type="button" class="button" id="refreshAll">전체 새로고침</button>
+            <span id="apiStatus" class="status-ready">준비 완료</span>
+            <button type="button" id="retryBtn" class="button retry-btn" style="display:none;">재시도</button>
+        </div>
+
+        <div class="view-options">
+            <label>파트: 
+                <select id="filterPart">
+                    <option value="all">전체</option>
+                    <option value="Frontend">Frontend</option>
+                    <option value="Backend">Backend</option>
+                    <option value="Design">Design</option>
+                </select>
+            </label>
+            <label>정렬: 
+                <select id="sortOrder">
+                    <option value="latest">최신추가순</option>
+                    <option value="name">이름순</option>
+                </select>
+            </label>
+            <input type="text" id="searchInput" placeholder="이름으로 검색">
+        </div>
+    </header>
+
+    <div id="formContainer"></div>
+
+    <main class="grid" id="summaryGrid"></main>
+
+    <div id="emptyState" style="display:none; text-align:center; margin: 50px;">
+        <h3>표시할 아기 사자가 없습니다. (필터/검색 조건을 확인해 주세요)</h3>
+    </div>
+
+    <hr>
+
+    <section class="Details-grid" id="detailsList"></section>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

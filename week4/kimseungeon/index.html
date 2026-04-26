@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>아기사자 명단 대시보드</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+
+    <!-- 컨트롤 영역 -->
+    <section class="control-bar">
+      <div class="control-bar__row control-bar__row--top">
+        <button class="btn btn--primary" id="toggle-form-btn">아기 사자 추가</button>
+        <button class="btn btn--default" id="delete-last-btn">마지막 아기 사자 삭제</button>
+        <span class="total-count" id="total-count">총 0명</span>
+      </div>
+      <div class="control-bar__row control-bar__row--fetch">
+        <button class="btn btn--fetch" id="fetch-one-btn">랜덤 1명 추가</button>
+        <button class="btn btn--fetch" id="fetch-five-btn">랜덤 5명 추가</button>
+        <button class="btn btn--fetch" id="fetch-refresh-btn">전체 새로고침</button>
+        <span class="fetch-status" id="fetch-status">준비 완료</span>
+        <button class="btn btn--retry hidden" id="retry-btn">재시도</button>
+      </div>
+      <div class="control-bar__row control-bar__row--view">
+        <label class="view-label" for="filter-part">파트</label>
+        <select class="view-select" id="filter-part">
+          <option value="전체">전체</option>
+          <option value="Frontend">Frontend</option>
+          <option value="Backend">Backend</option>
+          <option value="Design">Design</option>
+        </select>
+        <label class="view-label" for="sort-order">정렬</label>
+        <select class="view-select" id="sort-order">
+          <option value="latest">최신추가순</option>
+          <option value="name">이름순</option>
+        </select>
+        <label class="view-label" for="search-name">검색</label>
+        <input class="view-input" type="text" id="search-name" placeholder="이름으로 검색" />
+      </div>
+    </section>
+
+    <!-- 추가 폼 영역 -->
+    <section class="form-section hidden" id="form-section">
+      <div class="form-grid">
+        <div class="form-field">
+          <label class="form-label" for="input-name">이름</label>
+          <input class="form-input" type="text" id="input-name" placeholder="예: 홍아기사자" />
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="input-part">파트</label>
+          <select class="form-input form-select" id="input-part">
+            <option value="Frontend">Frontend</option>
+            <option value="Backend">Backend</option>
+            <option value="Design">Design</option>
+          </select>
+        </div>
+        <div class="form-field form-field--full">
+          <label class="form-label" for="input-skills">관심 기술 (쉼표로 구분)</label>
+          <input class="form-input" type="text" id="input-skills" placeholder="예: JavaScript, React, HTML/CSS" />
+        </div>
+        <div class="form-field form-field--full">
+          <label class="form-label" for="input-bio">한 줄 소개 (요약 카드)</label>
+          <input class="form-input" type="text" id="input-bio" placeholder="예: 3주차 DOM 조작 연습 중!" />
+        </div>
+        <div class="form-field form-field--full">
+          <label class="form-label" for="input-intro">자기소개 (상세 카드)</label>
+          <textarea class="form-input form-textarea" id="input-intro" placeholder="예: HTML/CSS로 구조를 만들고, JS로 데이터를 바꾸면 화면이 바뀌는 경험을 하고 있습니다."></textarea>
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="input-email">Email</label>
+          <input class="form-input" type="email" id="input-email" placeholder="예: lion@example.com" />
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="input-phone">Phone</label>
+          <input class="form-input" type="text" id="input-phone" placeholder="예: 010-1234-5678" />
+        </div>
+        <div class="form-field form-field--full">
+          <label class="form-label" for="input-website">Website</label>
+          <input class="form-input" type="url" id="input-website" placeholder="예: https://example.com" />
+        </div>
+        <div class="form-field form-field--full">
+          <label class="form-label" for="input-comment">한 마디</label>
+          <input class="form-input" type="text" id="input-comment" placeholder="예: 데이터 바꾸면 화면도 바뀐다!" />
+        </div>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn--default" id="random-fill-btn">랜덤 값 채우기</button>
+        <button class="btn btn--primary" id="submit-btn">추가하기</button>
+        <button class="btn btn--default" id="cancel-btn">취소</button>
+      </div>
+    </section>
+
+    <!-- 요약 카드 그리드 -->
+    <section class="card-grid" id="card-grid">
+
+      <!-- 김승언 (내 카드) -->
+      <article class="summary-card summary-card--mine" data-id="mine">
+        <div class="summary-card__image-wrap">
+          <img class="summary-card__photo" src="profile.png" alt="김승언 프로필 사진" />
+          <span class="summary-card__badge">HTML</span>
+        </div>
+        <div class="summary-card__info">
+          <h2 class="summary-card__name">김승언</h2>
+          <p class="summary-card__role">Frontend</p>
+          <p class="summary-card__bio">열심히 배우는 프론트엔드 개발자입니다.</p>
+        </div>
+      </article>
+
+      <article class="summary-card" data-id="1">
+        <div class="summary-card__image-wrap">
+          <img class="summary-card__photo" src="strawberry.png" alt="딸기사자 프로필 사진" />
+          <span class="summary-card__badge">React</span>
+        </div>
+        <div class="summary-card__info">
+          <h2 class="summary-card__name">딸기사자</h2>
+          <p class="summary-card__role">Frontend</p>
+          <p class="summary-card__bio">구조적인 UI를 고민하는 프론트엔드 개발자입니다.</p>
+        </div>
+      </article>
+
+      <article class="summary-card" data-id="2">
+        <div class="summary-card__image-wrap">
+          <img class="summary-card__photo" src="carrot.png" alt="당근사자 프로필 사진" />
+          <span class="summary-card__badge">Spring</span>
+        </div>
+        <div class="summary-card__info">
+          <h2 class="summary-card__name">당근사자</h2>
+          <p class="summary-card__role">Backend</p>
+          <p class="summary-card__bio">안정적인 서버 구조에 관심이 많습니다.</p>
+        </div>
+      </article>
+
+      <article class="summary-card" data-id="3">
+        <div class="summary-card__image-wrap">
+          <img class="summary-card__photo" src="watermelon.png" alt="수박사자 프로필 사진" />
+          <span class="summary-card__badge">Figma</span>
+        </div>
+        <div class="summary-card__info">
+          <h2 class="summary-card__name">수박사자</h2>
+          <p class="summary-card__role">Design</p>
+          <p class="summary-card__bio">사용자 관점에서 디자인을 고민합니다.</p>
+        </div>
+      </article>
+
+      <article class="summary-card" data-id="4">
+        <div class="summary-card__image-wrap">
+          <img class="summary-card__photo" src="melon.png" alt="멜론사자 프로필 사진" />
+          <span class="summary-card__badge">TypeScript</span>
+        </div>
+        <div class="summary-card__info">
+          <h2 class="summary-card__name">멜론사자</h2>
+          <p class="summary-card__role">Frontend</p>
+          <p class="summary-card__bio">컴포넌트 단위 설계에 흥미가 있습니다.</p>
+        </div>
+      </article>
+
+      <article class="summary-card" data-id="5">
+        <div class="summary-card__image-wrap">
+          <img class="summary-card__photo" src="cantaloupe.png" alt="참외사자 프로필 사진" />
+          <span class="summary-card__badge">Node.js</span>
+        </div>
+        <div class="summary-card__info">
+          <h2 class="summary-card__name">참외사자</h2>
+          <p class="summary-card__role">Backend</p>
+          <p class="summary-card__bio">데이터 흐름을 명확히 하는 개발을 지향합니다.</p>
+        </div>
+      </article>
+
+      <article class="summary-card" data-id="6">
+        <div class="summary-card__image-wrap">
+          <img class="summary-card__photo" src="peach.png" alt="복숭아사자 프로필 사진" />
+          <span class="summary-card__badge">Design System</span>
+        </div>
+        <div class="summary-card__info">
+          <h2 class="summary-card__name">복숭아사자</h2>
+          <p class="summary-card__role">Design</p>
+          <p class="summary-card__bio">디자인 시스템에 관심이 많습니다.</p>
+        </div>
+      </article>
+
+      <article class="summary-card" data-id="7">
+        <div class="summary-card__image-wrap">
+          <img class="summary-card__photo" src="kiwi.png" alt="키위사자 프로필 사진" />
+          <span class="summary-card__badge">CSS Grid</span>
+        </div>
+        <div class="summary-card__info">
+          <h2 class="summary-card__name">키위사자</h2>
+          <p class="summary-card__role">Frontend</p>
+          <p class="summary-card__bio">레이아웃 설계를 즐기는 개발자입니다.</p>
+        </div>
+      </article>
+
+      <article class="summary-card" data-id="8">
+        <div class="summary-card__image-wrap">
+          <img class="summary-card__photo" src="pear.png" alt="배사자 프로필 사진" />
+          <span class="summary-card__badge">GraphQL</span>
+        </div>
+        <div class="summary-card__info">
+          <h2 class="summary-card__name">배사자</h2>
+          <p class="summary-card__role">Backend</p>
+          <p class="summary-card__bio">효율적인 API 설계에 관심이 많습니다.</p>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- 빈 상태 안내 -->
+    <p class="empty-state hidden" id="empty-state">
+      표시할 아기 사자가 없습니다. (필터/검색 조건을 확인해 주세요)
+    </p>
+
+    <!-- 상세 카드 목록 -->
+    <section class="detail-list" id="detail-list">
+
+      <article class="detail-card" data-id="mine">
+        <header class="detail-card__header">
+          <h2 class="detail-card__name">김승언</h2>
+          <p class="detail-card__role">Frontend</p>
+          <p class="detail-card__track">LION TRACK</p>
+        </header>
+        <section class="detail-card__section">
+          <h3 class="section-title">자기소개</h3>
+          <p class="section-body">열심히 배우는 프론트엔드 개발자입니다.</p>
+        </section>
+        <section class="detail-card__section">
+          <h3 class="section-title">연락처</h3>
+          <ul class="bullet-list">
+            <li>Email: lion@example.com</li>
+            <li>Phone: 010-1234-5678</li>
+            <li><a href="https://example.com">https://example.com</a></li>
+          </ul>
+        </section>
+        <section class="detail-card__section">
+          <h3 class="section-title">관심 기술</h3>
+          <ul class="bullet-list">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+          </ul>
+        </section>
+        <section class="detail-card__section">
+          <h3 class="section-title">한 마디</h3>
+          <p class="section-body">기초부터 탄탄하게!</p>
+        </section>
+      </article>
+
+      <article class="detail-card" data-id="1">
+        <header class="detail-card__header">
+          <h2 class="detail-card__name">딸기사자</h2>
+          <p class="detail-card__role">Frontend</p>
+          <p class="detail-card__track">LION TRACK</p>
+        </header>
+        <section class="detail-card__section">
+          <h3 class="section-title">자기소개</h3>
+          <p class="section-body">구조적인 UI를 고민하는 프론트엔드 개발자입니다.</p>
+        </section>
+        <section class="detail-card__section">
+          <h3 class="section-title">연락처</h3>
+          <ul class="bullet-list">
+            <li>Email: strawberry@example.com</li>
+          </ul>
+        </section>
+        <section class="detail-card__section">
+          <h3 class="section-title">관심 기술</h3>
+          <ul class="bullet-list">
+            <li>React</li>
+            <li>TypeScript</li>
+            <li>CSS</li>
+          </ul>
+        </section>
+        <section class="detail-card__section">
+          <h3 class="section-title">한 마디</h3>
+          <p class="section-body">사용자가 편한 UI를 만들고 싶습니다.</p>
+        </section>
+      </article>
+
+      <article class="detail-card" data-id="2">
+        <header class="detail-card__header">
+          <h2 class="detail-card__name">당근사자</h2>
+          <p class="detail-card__role">Backend</p>
+          <p class="detail-card__track">LION TRACK</p>
+        </header>
+        <section class="detail-card__section">
+          <h3 class="section-title">자기소개</h3>
+          <p class="section-body">안정적인 서버 구조에 관심이 많습니다.</p>
+        </section>
+        <section class="detail-card__section">
+          <h3 class="section-title">연락처</h3>
+          <ul class="bullet-list">
+            <li>Email: carrot@example.com</li>
+          </ul>
+        </section>
+        <section class="detail-card__section">
+          <h3 class="section-title">관심 기술</h3>
+          <ul class="bullet-list">
+            <li>Spring</li>
+            <li>Java</li>
+            <li>MySQL</li>
+          </ul>
+        </section>
+        <section class="detail-card__section">
+          <h3 class="section-title">한 마디</h3>
+          <p class="section-body">탄탄한 백엔드 개발자가 되고 싶습니다.</p>
+        </section>
+      </article>
+
+      <article class="detail-card" data-id="3">
+        <header class="detail-card__header">
+          <h2 class="detail-card__name">수박사자</h2>
+          <p class="detail-card__role">Design</p>
+          <p class="detail-card__track">LION TRACK</p>
+        </header>
+        <section class="detail-card__section">
+          <h3 class="section-title">자기소개</h3>
+          <p class="section-body">사용자 관점에서 디자인을 고민합니다.</p>
+        </section>
+        <section class="detail-card__section">
+          <h3 class="section-title">연락처</h3>
+          <ul class="bullet-list">
+            <li>Email: watermelon@example.com</li>
+          </ul>
+        </section>
+        <section class="detail-card__section">
+          <h3 class="section-title">관심 기술</h3>
+          <ul class="bullet-list">
+            <li>Figma</li>
+            <li>Illustrator</li>
+            <li>Photoshop</li>
+          </ul>
+        </section>
+        <section class="detail-card__section">
+          <h3 class="section-title">한 마디</h3>
+          <p class="section-body">사용자가 편한 디자인을 만들고 싶습니다.</p>
+        </section>
+      </article>
+
+      <article class="detail-card" data-id="4">
+        <header class="detail-card__header">
+          <h2 class="detail-card__name">멜론사자</h2>
+          <p class="detail-card__role">Frontend</p>
+          <p class="detail-card__track">LION TRACK</p>
+        </header>
+        <section class="detail-card__section">
+          <h3 class="section-title">자기소개</h3>
+          <p class="section-body">컴포넌트 단위 설계에 흥미가 있습니다.</p>
+        </section>
+        <section class="detail-card__section">
+          <h3 class="section-title">연락처</h3>
+          <ul class="bullet-list">
+            <li>Email: melon@example.com</li>
+          </ul>
+        </section>
+        <section class="detail-card__section">
+          <h3 class="section-title">관심 기술</h3>
+          <ul class="bullet-list">
+            <li>TypeScript</li>
+            <li>React</li>
+            <li>Next.js</li>
+          </ul>
+        </section>
+        <section class="detail-card__section">
+          <h3 class="section-title">한 마디</h3>
+          <p class="section-body">좋은 컴포넌트를 설계하는 개발자가 되고 싶습니다.</p>
+        </section>
+      </article>
+
+      <article class="detail-card" data-id="5">
+        <header class="detail-card__header">
+          <h2 class="detail-card__name">참외사자</h2>
+          <p class="detail-card__role">Backend</p>
+          <p class="detail-card__track">LION TRACK</p>
+        </header>
+        <section class="detail-card__section">
+          <h3 class="section-title">자기소개</h3>
+          <p class="section-body">데이터 흐름을 명확히 하는 개발을 지향합니다.</p>
+        </section>
+        <section class="detail-card__section">
+          <h3 class="section-title">연락처</h3>
+          <ul class="bullet-list">
+            <li>Email: cantaloupe@example.com</li>
+          </ul>
+        </section>
+        <section class="detail-card__section">
+          <h3 class="section-title">관심 기술</h3>
+          <ul class="bullet-list">
+            <li>Node.js</li>
+            <li>Express</li>
+            <li>MongoDB</li>
+          </ul>
+        </section>
+        <section class="detail-card__section">
+          <h3 class="section-title">한 마디</h3>
+          <p class="section-body">효율적인 서버를 만드는 개발자가 되고 싶습니다.</p>
+        </section>
+      </article>
+
+      <article class="detail-card" data-id="6">
+        <header class="detail-card__header">
+          <h2 class="detail-card__name">복숭아사자</h2>
+          <p class="detail-card__role">Design</p>
+          <p class="detail-card__track">LION TRACK</p>
+        </header>
+        <section class="detail-card__section">
+          <h3 class="section-title">자기소개</h3>
+          <p class="section-body">디자인 시스템에 관심이 많습니다.</p>
+        </section>
+        <section class="detail-card__section">
+          <h3 class="section-title">연락처</h3>
+          <ul class="bullet-list">
+            <li>Email: peach@example.com</li>
+          </ul>
+        </section>
+        <section class="detail-card__section">
+          <h3 class="section-title">관심 기술</h3>
+          <ul class="bullet-list">
+            <li>Design System</li>
+            <li>Figma</li>
+            <li>Storybook</li>
+          </ul>
+        </section>
+        <section class="detail-card__section">
+          <h3 class="section-title">한 마디</h3>
+          <p class="section-body">일관된 디자인 시스템을 만들고 싶습니다.</p>
+        </section>
+      </article>
+
+      <article class="detail-card" data-id="7">
+        <header class="detail-card__header">
+          <h2 class="detail-card__name">키위사자</h2>
+          <p class="detail-card__role">Frontend</p>
+          <p class="detail-card__track">LION TRACK</p>
+        </header>
+        <section class="detail-card__section">
+          <h3 class="section-title">자기소개</h3>
+          <p class="section-body">레이아웃 설계를 즐기는 개발자입니다.</p>
+        </section>
+        <section class="detail-card__section">
+          <h3 class="section-title">연락처</h3>
+          <ul class="bullet-list">
+            <li>Email: kiwi@example.com</li>
+          </ul>
+        </section>
+        <section class="detail-card__section">
+          <h3 class="section-title">관심 기술</h3>
+          <ul class="bullet-list">
+            <li>CSS Grid</li>
+            <li>Flexbox</li>
+            <li>SCSS</li>
+          </ul>
+        </section>
+        <section class="detail-card__section">
+          <h3 class="section-title">한 마디</h3>
+          <p class="section-body">깔끔한 레이아웃을 구현하는 개발자가 되고 싶습니다.</p>
+        </section>
+      </article>
+
+      <article class="detail-card" data-id="8">
+        <header class="detail-card__header">
+          <h2 class="detail-card__name">배사자</h2>
+          <p class="detail-card__role">Backend</p>
+          <p class="detail-card__track">LION TRACK</p>
+        </header>
+        <section class="detail-card__section">
+          <h3 class="section-title">자기소개</h3>
+          <p class="section-body">효율적인 API 설계에 관심이 많습니다.</p>
+        </section>
+        <section class="detail-card__section">
+          <h3 class="section-title">연락처</h3>
+          <ul class="bullet-list">
+            <li>Email: pear@example.com</li>
+          </ul>
+        </section>
+        <section class="detail-card__section">
+          <h3 class="section-title">관심 기술</h3>
+          <ul class="bullet-list">
+            <li>GraphQL</li>
+            <li>REST API</li>
+            <li>PostgreSQL</li>
+          </ul>
+        </section>
+        <section class="detail-card__section">
+          <h3 class="section-title">한 마디</h3>
+          <p class="section-body">효율적인 API를 설계하는 개발자가 되고 싶습니다.</p>
+        </section>
+      </article>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
